@@ -8,7 +8,6 @@ RSpec.describe 'Shelters index page' do
 
     visit '/shelters'
 
-    save_and_open_page
     expect(page).to have_content(shelter1.name)
     expect(page).to have_content(shelter2.name)
     expect(page).to have_content(shelter3.name)
