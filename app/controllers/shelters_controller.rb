@@ -49,4 +49,9 @@ class SheltersController < ApplicationController
     redirect_to '/shelters'
   end
 
+  def pets
+    shelter = Shelter.find(params[:id])
+    @shelter_pets = shelter.pets.all
+  end
+
 end

@@ -5,7 +5,6 @@ RSpec.describe 'Shelters index page' do
     shelter1 = Shelter.create(name:"Puppy Paws")
     shelter2 = Shelter.create(name: "Animal")
     shelter3 = Shelter.create(name: "The Den")
-
     visit '/shelters'
 
     expect(page).to have_content(shelter1.name)
