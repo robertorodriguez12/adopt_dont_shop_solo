@@ -8,5 +8,6 @@ class CreatePets < ActiveRecord::Migration[5.2]
       t.string :image
       t.timestamps
     end
+    add_reference :pets, :shelter, foreign_key: false
   end
 end
