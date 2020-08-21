@@ -242,6 +242,7 @@
         "lines": [
           1,
           null,
+          null,
           1,
           1,
           1,
@@ -250,6 +251,12 @@
           1,
           1,
           1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -304,6 +311,39 @@
           null,
           1,
           1,
+          null,
+          null
+        ]
+      },
+      "/Users/robertorodriguez/turing/mod2/projects/adopt_dont_shop/spec/features/pet_index_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null
         ]
@@ -421,8 +461,39 @@
           1,
           null
         ]
+      },
+      "/Users/robertorodriguez/turing/mod2/projects/adopt_dont_shop/app/models/pet.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/robertorodriguez/turing/mod2/projects/adopt_dont_shop/app/controllers/pets_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1597890345
+    "timestamp": 1597969407
   }
 }
