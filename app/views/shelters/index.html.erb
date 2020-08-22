@@ -1,6 +1,58 @@
-<h1> All Shelters </h1>
-<% @shelters.each do |shelter| %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Website Layout</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  background-color: darkblue;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: darkblue;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1 style="color:white;">Shelters</h1>
+  </div>
+  <div class="topnav">
+    <a href="/shelters/new">Click here to create a new shelter</a>
+  </div>
+  <% @shelters.each do |shelter| %>
   <h3><a href="/shelters/<%= shelter.id %>"><%= shelter.name %></a></h3>
-<% end %>
-<br>
-<a href="/shelters/new">Click here to create a new shelter</a>
+  <% end %>
+  <img src="http://www.ci.san-bernardino.ca.us/images/PD/supply_co..png" alt="Adopt Today" width="1600" height="500">
+</body>
+</html>
