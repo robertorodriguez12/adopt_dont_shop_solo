@@ -16,21 +16,11 @@ body {
 /* Style the header */
 header {
   background-color: #000000;
-  padding: 3px;
+  padding: 30px;
   text-align: center;
   font-size: 35px;
   color: white;
 }
-
-/* Create two columns/boxes that floats next to each other */
-nav {
-  float: left;
-  width: 30%;
-  height: 300px; /* only for demonstration, should be removed */
-  background: #CED500;
-  padding: 20px;
-}
-
 /* Style the list inside the menu */
 nav ul {
   list-style-type: none;
@@ -38,10 +28,10 @@ nav ul {
 }
 
 article {
-  float: left;
+  float: center;
   padding: 0px;
-  width: 70%;
-  background-color: grey;
+  width: 100%;
+  background-color: white;
   height: 300px; /* only for demonstration, should be removed */
 }
 
@@ -71,25 +61,31 @@ footer {
 </head>
 <body>
 
-  <img src="http://www.ci.san-bernardino.ca.us/images/PD/supply_co..png" alt="Adopt Today" width="1570" height="400">
 <header>
-  <h2>Shelters</h2>
+  <h2>Add New Pet</h2>
 </header>
 
 <section>
-  <nav>
-    <ul>
-      <li><%= button_to 'Home', "/", method: :get %></li>
-      <li><%= button_to 'Create a new Shelter', "/shelters/new", method: :get %></li>
-    </ul>
-  </nav>
+
 
   <article>
-    <% @shelters.each do |shelter| %>
-    <h3><a href="/shelters/<%= shelter.id %>"><%= shelter.name %></a></h3>
-    <% end %>
+    <form action="/shelters/<%=@shelter.id %>/pets" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <p>Enter the information for the new pet:</p>
+      <label for="name">Name:</label><br>
+      <input type='text' name='pet[name]'/><br/>
+      <label for="age">Approximate Age:</label><br>
+      <input type='text' name='pet[approximate_age]'/><br/>
+      <label for="sex">Gender:</label><br>
+      <input type='text' name='pet[sex]'/><br/>
+      <label for="image">Picture:</label><br>
+      <input type='text' name='pet[image]'/><br/>
+      <input type='submit' value="Add Pet"/>
+    </form>
+
   </article>
 </section>
+
 <footer>
   <p>Thank you for Visiting</p>
 </footer>

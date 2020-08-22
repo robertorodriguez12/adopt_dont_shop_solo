@@ -6,7 +6,7 @@ RSpec.describe 'Edit Shelter' do
 
     visit "/shelters/#{shelter1.id}"
 
-    click_link "Update Shelter"
+    click_button "Update Shelter"
 
     expect(current_path).to eq("/shelters/#{shelter1.id}/edit")
 

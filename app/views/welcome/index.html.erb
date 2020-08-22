@@ -25,9 +25,9 @@ header {
 /* Create two columns/boxes that floats next to each other */
 nav {
   float: left;
-  width: 30%;
+  width: 10%;
   height: 300px; /* only for demonstration, should be removed */
-  background: #CED500;
+  background: #00aae3;
   padding: 20px;
 }
 
@@ -40,8 +40,8 @@ nav ul {
 article {
   float: left;
   padding: 0px;
-  width: 70%;
-  background-color: #001FFF;
+  width: 90%;
+  background-color: #000278;
   height: 300px; /* only for demonstration, should be removed */
 }
 
@@ -78,8 +78,8 @@ footer {
 <section>
   <nav>
     <ul>
-      <li><a href="/shelters">Shelter Index</a></li>
-      <li><a href="/pets">Pet Index</a></li>
+      <li><%= button_to 'Shelters', "/shelters", method: :get %></li>
+      <li><%= button_to 'Pets', "/pets", method: :get %></li>
     </ul>
   </nav>
 

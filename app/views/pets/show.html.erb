@@ -16,7 +16,7 @@ body {
 /* Style the header */
 header {
   background-color: #000000;
-  padding: 3px;
+  padding: 30px;
   text-align: center;
   font-size: 35px;
   color: white;
@@ -71,23 +71,24 @@ footer {
 </head>
 <body>
 
-  <img src="http://www.ci.san-bernardino.ca.us/images/PD/supply_co..png" alt="Adopt Today" width="1570" height="400">
 <header>
-  <h2>Shelters</h2>
+  <h2>Say Hello To:<%= @pet.name %></h2>
 </header>
-
+<% if @pet.image? %>
+ <%= image_tag @pet.image %>
+<% end %>
 <section>
   <nav>
     <ul>
-      <li><%= button_to 'Home', "/", method: :get %></li>
-      <li><%= button_to 'Create a new Shelter', "/shelters/new", method: :get %></li>
+      <li><%= button_to 'Pets', "/pets", method: :get %></li>
     </ul>
   </nav>
 
   <article>
-    <% @shelters.each do |shelter| %>
-    <h3><a href="/shelters/<%= shelter.id %>"><%= shelter.name %></a></h3>
-    <% end %>
+    <label for="age"><%= @pet.name %>Age</label><br>
+    <p><%= @pet.approximate_age %></p>
+    <label for="sex"><%= @pet.name %>Gender</label><br>
+    <p><%= @pet.sex %></p>
   </article>
 </section>
 <footer>

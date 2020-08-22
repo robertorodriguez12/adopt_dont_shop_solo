@@ -4,7 +4,7 @@ RSpec.describe 'New Shelter Form' do
   it 'see a link to create a new shelter' do
     visit "/shelters"
 
-    click_link "Click here to create a new shelter"
+    click_button "Create a new Shelter"
 
     expect(current_path).to eq('/shelters/new')
 
