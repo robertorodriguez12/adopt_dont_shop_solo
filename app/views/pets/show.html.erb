@@ -75,6 +75,7 @@ footer {
   <h2>Say Hello To:<%= @pet.name %></h2>
 </header>
 <% if @pet.image? %>
+<%= binding.pry %>
  <%= image_tag @pet.image %>
 <% end %>
 <section>

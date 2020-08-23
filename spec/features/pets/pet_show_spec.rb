@@ -13,7 +13,7 @@ RSpec.describe 'Shows pet based off :id' do
                          approximate_age: "3",
                          sex: 'male',
                          shelter_id: shelter.id,
-                         image: 'aspen.jpg')
+                         image: "../../assets/images/aspen.jpg")
 
     visit "/pets/#{pet1.id}"
 

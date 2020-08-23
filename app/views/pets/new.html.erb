@@ -81,6 +81,7 @@ footer {
       <label for="image">Picture:</label><br>
       <input type='text' name='pet[image]'/><br/>
       <input type='submit' value="Add Pet"/>
+      <input type="hidden" name="pet[shelter_id]" value="<%= @shelter.id %>">
     </form>
 
   </article>

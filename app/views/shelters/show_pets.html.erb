@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>CSS Template</title>
+<title>CSS Website Layout</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -10,91 +10,70 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
 }
 
 /* Style the header */
-header {
-  background-color: #000000;
-  padding: 30px;
-  text-align: center;
-  font-size: 35px;
-  color: white;
-}
-
-/* Create two columns/boxes that floats next to each other */
-nav {
-  float: left;
-  width: 30%;
-  height: 300px; /* only for demonstration, should be removed */
-  background: #CED500;
+.header {
+  background-color: dimgrey;
   padding: 20px;
+  text-align: left;
 }
 
-/* Style the list inside the menu */
-nav ul {
-  list-style-type: none;
-  padding: 0;
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: darkblue;
 }
 
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
 article {
   float: left;
   padding: 0px;
-  width: 70%;
-  background-color: grey;
+  width: 100%;
+  background-color: white;
   height: 300px; /* only for demonstration, should be removed */
 }
-
-/* Clear floats after the columns */
-section:after {
-  content: "";
-  display: table;
-  clear: both;
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
 }
-
-/* Style the footer */
 footer {
   background-color: #000000;
   padding: 40px;
   text-align: center;
   color: white;
 }
-
-/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-@media (max-width: 600px) {
-  nav, article {
-    width: 100%;
-    height: auto;
-  }
-}
 </style>
 </head>
 <body>
+  <img src="http://www.ci.san-bernardino.ca.us/images/PD/supply_co..png" alt="Adopt Today" width="1600" height="500">
 
-<header>
-  <h2>Available Pets</h2>
-</header>
+<div class="header">
+ <h1 style="color:white;">Available Pets at <%=@shelter.name%></h1>
+</div>
 
-<section>
-  <nav>
-    <ul>
-  <li><%= button_to 'Add a New Pet', "/shelters/#{@shelter.id}/pets/new", method: :get %></li>
-  <li><%= button_to 'Home', "/", method: :get %></li>
-    </ul>
-  </nav>
+<div class="topnav">
+  <a><%= button_to 'Home', "/", method: :get %></a>
+  <a><%= button_to 'Create New Pet', "/shelters/#{@shelter.id}/pets/new", method: :get %></a>
+</div>
 
-  <article>
-    <% @pets.each do |pet| %>
-      <h2><%= pet.name %></h2>
-      <% if pet.image? %>
-       <%= image_tag pet.image %>
-      <% end %>
-      <p>Approximate Age:<%= pet.approximate_age %></p>
-      <p>Gender:<%= pet.sex %> </p>
-    <% end %>
-  </article>
-</section>
-<img src="http://www.ci.san-bernardino.ca.us/images/PD/supply_co..png" alt="Adopt Today" width="1600" height="500">
+<article>
+  <% @pets.each do |pet| %>
+  <h3><a href="/pets/<%= pet.id %>"><%= pet.name %></a></h3>
+  <% end %>
+</article>
+
+
 <footer>
   <p>Thank you for Visiting</p>
 </footer>

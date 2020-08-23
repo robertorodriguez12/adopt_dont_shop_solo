@@ -11,9 +11,10 @@ class PetsController < ApplicationController
 
   def create
     shelter = Shelter.find(params[:shelter_id])
+    # binding.pry
     shelter.pets.create(pet_params)
-
     redirect_to "/shelters/#{shelter.id}/pets"
+
   end
 
   def show
@@ -23,7 +24,7 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.permit(:name,
+    params[:pet].permit(:name,
                   :approximate_age,
                   :sex,
                   :image,

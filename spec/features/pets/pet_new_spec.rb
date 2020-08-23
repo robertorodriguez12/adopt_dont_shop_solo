@@ -11,7 +11,7 @@ RSpec.describe 'add new pet' do
 
     visit "/shelters/#{@shelter1.id}/pets/"
 
-    click_on "Add a New Pet"
+    click_on "Create New Pet"
 
     expect(current_path).to eq("/shelters/#{@shelter1.id}/pets/new")
 
@@ -20,11 +20,13 @@ RSpec.describe 'add new pet' do
     fill_in "pet[sex]", with: 'male'
     fill_in "pet[image]", with:"../../assets/images/pup1.jpg"
     click_on 'Add Pet'
-    #
-    # expect(current_path).to eq("/shelters/#{shelter.id}/pets")
-    # expect(page).to have_content('Patti')
-    # expect(page).to have_content('Age: 5')
-    # expect(page).to have_content('Sex: male')
+
+    expect(current_path).to eq("/shelters/#{@shelter1.id}/pets")
+
+    click_on "Walter"
+    expect(page).to have_content('Walter')
+    expect(page).to have_content('5')
+    expect(page).to have_content('Sex: male')
   end
 
 end
